@@ -1,14 +1,27 @@
 # ivraj-vim-tmux
-I'm storing my vim and tmux config files on git for access anywhere. Feel free
-to take anything and everything you like. 
+I'm storing my vim and tmux config files on git for easy access. Feel free to
+take whatever. 
 
 
-### How to install
-Clone in the repo and then link the .vimrc to your home directory.
-* ```rm -rf ~/.vim && rm -f ~/.vimrc``` (remove the existing vimrc and .vim folder)
-* ```git clone git@github.com:Ivraj/ivraj-vim-tmux.git ~/.vim``` (clone in the git repo)
-* ```git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim``` (make sure we have the most recent version of vundle)
-* ```ln -s ~/.vim/.vimrc ~/.vimrc``` (symlink the vimrc from the repo to your home vimrc)
+### How to Install
+First, make sure that you have vim and tmux installed. If not, they can be
+installed on Debian systems with the following commands.
 
-The above commands can all be excuted together with the following command. 
-```rm -rf ~/.vim && rm -f ~/.vimrc is && git clone git@github.com:Ivraj/ivraj-vim-tmux.git ~/.vim && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && ln -s ~/.vim/.vimrc ~/.vimrc```
+````
+sudo apt-get install vim
+sudo apt-get install tmux
+````
+
+We'll start off by removing previous config files, and then copying in the
+files from git. 
+
+* ````rm -rf ~/.vim && rm -f ~/.vimrc && rm -r ~/.tmux.conf```` (remove the existing vimrc and .vim folder)
+* ````git clone git@github.com:Ivraj/ivraj-vim-tmux.git/vim ~/.vim```` (clones vim files)
+* ````git clone git@github.com:Ivraj/ivraj-vim-tmux.git/.tmux.conf ~/.tmux.conf```` (clones .tmux.conf)
+* ````git clone https://github.com/gmarik/Vundle.vim.git~/.vim/bundle/Vundle.vim```` (make sure we have the most recent version of vundle)
+* ````ln -s ~/.vim/.vimrc ~/.vimrc```` (symlink the vimrc from the repo to your home vimrc)
+* ````vim +PluginInstall +qall```` (installs the vundle plugins)
+
+The above 6 commands can all be excuted together with the following command. 
+
+````rm -rf ~/.vim && rm -f ~/.vimrc is && rm -r ~/.tmux.conf && git clone git@github.com:Ivraj/ivraj-vim-tmux.git/vim ~/.vim && git clone git@github.com:Ivraj/ivraj-vim-tmux.git/.tmux.conf ~/.tmux.conf && git clone https://github.com/gmarik/Vundle.vim.git~/.vim/bundle/Vundle.vim && ln -s ~/.vim/.vimrc ~/.vimrc && vim +PluginInstall +qall````

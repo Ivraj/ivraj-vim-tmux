@@ -34,13 +34,10 @@ call vundle#end()
 " Appearance
 syntax enable
 
-
 " Searching
 set incsearch
 
 colorscheme monokai
-
-set mouse=a "Click with the mouse
 
 " Spacing
 set tabstop=4 "4 spaces for tab

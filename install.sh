@@ -7,8 +7,9 @@ sudo apt-get install tmux
 
 echo "Reconfiguring config files..."
 
-rm -rf ~/.vim && rm -f ~/.vimrc && rm -r ~/.tmux.conf
-ln -s ~/.vim/.vimrc ~/.vimrc
+rm -f ~/.vimrc && rm -f ~/.tmux.conf
+mv $PWD ~/.vim 
+ln -s .vimrc ~/.vimrc
 mv ~/.vim/.tmux.conf ~
 
 echo "Installing Vundle..."

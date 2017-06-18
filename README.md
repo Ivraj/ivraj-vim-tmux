@@ -16,7 +16,7 @@ We'll start off by removing previous config files, and then copying in the
 files from git. 
 
 * ````rm -rf ~/.vim && rm -f ~/.vimrc && rm -r ~/.tmux.conf```` (remove the existing vimrc and .vim folder)
-* ````git clone git@github.com:Ivraj/ivraj-vim-tmux.git/ ~/.vim```` (clones vim files)
+* ````git clone https://github.com/Ivraj/ivraj-vim-tmux.git/ ~/.vim```` (clones vim files)
 * ````mv ~/.vim/.tmux.conf ~```` (moves .tmux.conf)
 * ````git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim```` (make sure we have the most recent version of vundle)
 * ````ln -s ~/.vim/.vimrc ~/.vimrc```` (symlink the vimrc from the repo to your home vimrc)

@@ -8,12 +8,13 @@ sudo apt-get install tmux
 echo "Reconfiguring vim and tmux..."
 
 rm -f ~/.vimrc && rm -f ~/.tmux.conf
+mv .netrwhist ~/.vim/.netwrhist
+mv ~/.vim/.tmux.conf ~
+mv .vimrc ~/.vim/.vimrc
 mv * ~/.vim 
-mv .* ~/.vim
-rm -f $PWD
+rm -rf $PWD
 cd ~/.vim
 ln -s .vimrc ~/.vimrc
-mv ~/.vim/.tmux.conf ~
 
 echo "Installing Vundle..."
 

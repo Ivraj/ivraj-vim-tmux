@@ -20,6 +20,9 @@ Plugin 'altercation/vim-colors-solarized'
 " Syntax highlighting
 Plugin 'scrooloose/syntastic'
 
+" Commenter plugin
+Plugin 'scrooloose/nerdcommenter'
+
 call vundle#end()
 
 " Appearance
@@ -28,6 +31,9 @@ syntax enable
 " Searching
 set incsearch
 set hlsearch
+
+" for Commenter
+filetype plugin on
 
 colorscheme monokai
 

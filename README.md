@@ -24,6 +24,6 @@ files from git.
 
 The above 6 commands can all be excuted together with the following command. 
 
-````rm -rf ~/.vim && rm -f ~/.vimrc is && rm -rf ~/.tmux.conf && git clone git@github.com:Ivraj/ivraj-vim-tmux.git ~/.vim && mv ~/.vim/.tmux.conf ~ && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && ln -s ~/.vim/.vimrc ~/.vimrc && vim +PluginInstall +qall````
+````sudo rm -rf ~/.vim && rm -f ~/.vimrc is && rm -rf ~/.tmux.conf && git clone git@github.com:Ivraj/ivraj-vim-tmux.git ~/.vim && mv ~/.vim/.tmux.conf ~ && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && ln -s ~/.vim/.vimrc ~/.vimrc && vim +PluginInstall +qall````
 
 And boom, you're done :PPPP

@@ -10,25 +10,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Install the searching plugin
-Plugin 'rking/ag.vim'
-
 " Install yaml highlighting
-Plugin 'erikzaadi/vim-ansible-yaml'
-Plugin 'avakhov/vim-yaml'
+Plugin 'chase/vim-ansible-yaml'
 
 " Solarized
 Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 
 " Syntax highlighting
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'scrooloose/syntastic'
-Plugin 'mtscout6/vim-cjsx'
 
-" Control p
-Plugin 'kien/ctrlp.vim'
-Plugin 'ervandew/supertab'
 call vundle#end()
 
 " Appearance
@@ -36,6 +27,7 @@ syntax enable
 
 " Searching
 set incsearch
+set hlsearch
 
 colorscheme monokai
 

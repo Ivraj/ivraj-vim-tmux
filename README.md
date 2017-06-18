@@ -4,6 +4,21 @@ take whatever.
 
 
 ### How to Install
+
+#### Easy Install
+I've added an install script for easy of installation. In order to install, all
+one has to do is run the follow commands.
+
+````
+git clone https://github.com/Ivraj/ivraj-vim-tmux.git
+cd ivraj-vim-tmux
+./install.sh
+````
+
+You may have to hit "y" when the script is install vim and/or tmux. You may 
+also have to hit "Enter" when the script is installing the Vundle packages. 
+
+#### Manual Installation
 First, make sure that you have vim and tmux installed. If not, they can be
 installed on Debian systems with the following commands.
 
@@ -19,11 +34,11 @@ files from git.
 * ````git clone https://github.com/Ivraj/ivraj-vim-tmux.git/ ~/.vim```` (clones vim files)
 * ````mv ~/.vim/.tmux.conf ~```` (moves .tmux.conf)
 * ````git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim```` (make sure we have the most recent version of vundle)
-* ````ln -s ~/.vim/.vimrc ~/.vimrc```` (symlink the vimrc from the repo to your home vimrc)
+* ````cp ~/.vim/.vimrc ~/.vimrc```` (symlink the vimrc from the repo to your home vimrc)
 * ````vim +PluginInstall +qall```` (installs the vundle plugins)
 
 The above 6 commands can all be excuted together with the following command. 
 
-````sudo rm -rf ~/.vim && rm -f ~/.vimrc is && rm -rf ~/.tmux.conf && git clone git@github.com:Ivraj/ivraj-vim-tmux.git ~/.vim && mv ~/.vim/.tmux.conf ~ && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && ln -s ~/.vim/.vimrc ~/.vimrc && vim +PluginInstall +qall````
+````sudo rm -rf ~/.vim && rm -f ~/.vimrc is && rm -rf ~/.tmux.conf && git clone git@github.com:Ivraj/ivraj-vim-tmux.git ~/.vim && mv ~/.vim/.tmux.conf ~ && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim && cp ~/.vim/.vimrc ~/.vimrc && vim +PluginInstall +qall````
 
 And boom, you're done :PPPP

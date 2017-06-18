@@ -9,6 +9,7 @@ echo "Reconfiguring vim and tmux..."
 
 rm -f ~/.vimrc && rm -f ~/.tmux.conf
 mv * ~/.vim 
+mv .* ~/.vim
 rm -f $PWD
 cd ~/.vim
 ln -s .vimrc ~/.vimrc

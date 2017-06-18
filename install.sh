@@ -7,14 +7,19 @@ sudo apt-get install tmux
 
 echo "Reconfiguring vim and tmux..."
 
-rm -f ~/.vimrc && rm -f ~/.tmux.conf
+rm -rf ~/.vim rm -f ~/.vimrc && rm -f ~/.tmux.conf
+mkdir ~/.vim
 mv .netrwhist ~/.vim/.netwrhist
-mv ~/.vim/.tmux.conf ~
+mv .tmux.conf ~/.tmux.conf
 mv .vimrc ~/.vim/.vimrc
 mv * ~/.vim 
 rm -rf $PWD
 cd ~/.vim
-ln -s .vimrc ~/.vimrc
+cp .vimrc ~/.vimrc
+
+echo "Setting vim as default editor..."
+
+export EDITOR=vim
 
 echo "Installing Vundle..."
 

@@ -59,8 +59,6 @@ nnoremap B ^
 nnoremap E $
 inoremap jk <Esc>
 vnoremap jk <Esc>
-inoremap jj <Esc>
-vnoremap jj <Esc>
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>

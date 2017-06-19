@@ -46,6 +46,7 @@ set lazyredraw " redraw only when we need to.
 set showmatch "Highlight the closing parend
 set number
 set autoindent
+set tw=79
 
 " Text
 set pastetoggle=<F2> "Hit f2 to enter paste mode
@@ -58,6 +59,8 @@ nnoremap B ^
 nnoremap E $
 inoremap jk <Esc>
 vnoremap jk <Esc>
+inoremap jj <Esc>
+vnoremap jj <Esc>
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>

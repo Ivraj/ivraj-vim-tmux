@@ -35,6 +35,7 @@ set hlsearch
 " for Commenter
 filetype plugin on
 
+"can be changed to desert for readability
 colorscheme monokai
 
 " Spacing
@@ -44,7 +45,8 @@ set shiftwidth=4
 set expandtab " tab with spaces
 set lazyredraw " redraw only when we need to.
 set showmatch "Highlight the closing parend
-set number
+set number " Show line number.
+set relativenumber " Show other line numbers relative to cursor.
 set autoindent
 set tw=79
 
@@ -57,6 +59,8 @@ let mapleader="\<Space>" "Use space bar as the leader key
 " Move to the beginning or end of the line
 nnoremap B ^
 nnoremap E $
+nnoremap J <PageDown> 
+nnoremap K <PageUp>
 inoremap jk <Esc>
 vnoremap jk <Esc>
 map <up> <nop>
@@ -79,6 +83,9 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>s :vs<CR>
 nnoremap <Leader>v :e ~/.vimrc<CR>
 
+" Updates files even while it's open
+set autoread
+
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
 
@@ -89,3 +96,40 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Indent Python in the Google way.
+
+setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+
+let s:maxoff = 50 " maximum number of lines to look backwards.
+
+function GetGooglePythonIndent(lnum)
+
+  " Indent inside parens.
+  " Align with the open paren unless it is at the end of the line.
+  " E.g.
+  "   open_paren_not_at_EOL(100,
+  "                         (200,
+  "                          300),
+  "                         400)
+  "   open_paren_at_EOL(
+  "       100, 200, 300, 400)
+  call cursor(a:lnum, 1)
+  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
+        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
+        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
+        \ . " =~ '\\(Comment\\|String\\)$'")
+  if par_line > 0
+    call cursor(par_line, 1)
+    if par_col != col("$") - 1
+      return par_col
+    endif
+  endif
+
+  " Delegate the rest to the original function.
+  return GetPythonIndent(a:lnum)
+
+endfunction
+
+let pyindent_nested_paren="&sw*2"
+let pyindent_open_paren="&sw*2"

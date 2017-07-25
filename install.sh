@@ -2,8 +2,8 @@
 
 echo "Installing vim and tmux..."
 
-sudo apt-get install vim
-sudo apt-get install tmux
+sudo apt-get -y install vim
+sudo apt-get -y install tmux
 
 echo "Reconfiguring vim and tmux..."
 

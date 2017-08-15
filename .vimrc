@@ -49,6 +49,9 @@ set relativenumber " Show other line numbers relative to cursor.
 set autoindent
 set tw=79
 
+" Allow saving of files as sudo without logging in as sudo
+cmap w!! w !sudo tee > /dev/null %
+
 " Text
 set pastetoggle=<F2> "Hit f2 to enter paste mode
 
